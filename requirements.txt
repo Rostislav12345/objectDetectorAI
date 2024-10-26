@@ -1,0 +1,5 @@
+watchdog
+flask
+python-open-cv
+werkzeug
+opencv-python

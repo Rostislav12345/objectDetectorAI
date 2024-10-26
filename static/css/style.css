@@ -1,0 +1,13 @@
+.div1bg {
+    color: lightskyblue;
+    align-content: center;
+}
+.img1 {
+    display: inline;
+}
+.img2 {
+    display: inline-block;
+}
+body {
+    text-align: center;
+}

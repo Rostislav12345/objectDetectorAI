@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .div1bg {
+            background-color: lightskyblue;
+        }
+        .img1 {
+            display: inline;
+        }
+        .img2 {
+            display: inline-block;
+        }
+    </style>
+    <title>Human Detection</title>
+</head>
+<body>
+    <div class='div1bg'>
+        <h1>Upload an Image for Human Detection</h1>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="Upload">
+        </form>
+        {% if uploaded_image %}
+        <div class='img1'>
+            <h2>Uploaded Image:</h2>
+            <img src="{{ url_for('static', filename='uploads/' ~ uploaded_image.split('/')[-1]) }}" alt="Uploaded Image" style="max-width: 400px;">
+        </div>
+        {% endif %}
+        {% if output_image %}
+        <div class='img2'>
+            <h2>Processed Image:</h2>
+            <img src="{{ url_for('static', filename='uploads/' ~ output_image.split('/')[-1]) }}" alt="Output Image" style="max-width: 400px;">
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
